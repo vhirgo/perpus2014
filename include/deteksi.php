@@ -64,18 +64,8 @@ document.write("<td>&nbsp;</td>");
 }
 document.write("</font></table>");
 </SCRIPT>
+
 <?php
-include "include/koneksi_db.php";
-
-$db_hostname="localhost";
-$db_username="root";
-$db_password="";
-$db_name="db_perpus";
-
-$konek = mysql_connect($db_hostname, $db_username, $db_password) or die ("Gagal koneksi ke server");
-
-mysql_select_db($db_name, $konek)
-   or die ("Gagal mengaktifkan database".mysql_error());
 $hi		= date("Y-m-d");
 $baris=mysql_query("SELECT * FROM pengunjung", $konek) or die (mysql_error());
 $jumlah=mysql_num_rows($baris);
